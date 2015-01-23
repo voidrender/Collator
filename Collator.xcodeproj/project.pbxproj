@@ -13,6 +13,7 @@
 		781283951A720BE300872346 /* Collator.m in Sources */ = {isa = PBXBuildFile; fileRef = 781283941A720BE300872346 /* Collator.m */; };
 		78D603BB1A7223A000F5E2F4 /* NSString+Collator.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D603BA1A7223A000F5E2F4 /* NSString+Collator.m */; };
 		78D603C51A7225DD00F5E2F4 /* NSString+CollatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D603C41A7225DD00F5E2F4 /* NSString+CollatorTests.m */; };
+		78D603C91A722C6000F5E2F4 /* NSString+Collator.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D603BA1A7223A000F5E2F4 /* NSString+Collator.m */; };
 		845F4D183184CA4FBD097AE0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 690961D7AC90795EABF39B8B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -270,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D603C91A722C6000F5E2F4 /* NSString+Collator.m in Sources */,
 				78D603C51A7225DD00F5E2F4 /* NSString+CollatorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +445,7 @@
 				78D603C81A7225DD00F5E2F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

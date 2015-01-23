@@ -9,6 +9,7 @@
 #import "Collator.h"
 #import "DTXcodeUtils.h"
 #import "DTXcodeHeaders.h"
+#import "NSString+Collator.h"
 
 static Collator *sharedPlugin;
 
@@ -70,7 +71,7 @@ static Collator *sharedPlugin;
     NSRange selectedTextRange = [sourceTextView selectedRange];
     NSString *selectedString = [sourceTextView.textStorage.string substringWithRange:selectedTextRange];
     if (selectedString) {
-        // TODO: Alphabetize selection.
+        [sourceTextView replaceCharactersInRange:selectedTextRange withString:[selectedString stringBySortingPropertyDeclarations]];
     }
 }
 
