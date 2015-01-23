@@ -1,2 +1,2 @@
 # Collator
-An Xcode plugin which alphabetizes property names.
+An Xcode plugin that alphabetizes property names.
