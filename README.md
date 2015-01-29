@@ -1,3 +1,4 @@
+[![Build](https://travis-ci.org/ioveracker/Collator.svg?branch=master)](https://travis-ci.org/ioveracker/Collator.svg?branch=master)
 # Collator
 An Xcode plugin that alphabetizes property names.
 
