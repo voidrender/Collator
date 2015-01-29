@@ -4,7 +4,7 @@ before_script:
   - sudo easy_install cpp-coveralls
 
 script:
-  - xctool -project Collator.xcodeproj -scheme "Collator" build test
+  - xctool -workspace Collator.xcworkspace -scheme 'CollatorTests' build test
 
 after_success:
   - ./coveralls.rb --extension m --exclude-folder Test --exclude-folder Externals
