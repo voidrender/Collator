@@ -19,12 +19,11 @@
     for (NSString *line in lines) {
         NSRange rangeOfProperty = [line rangeOfString:@"@property"];
         if (rangeOfProperty.location != NSNotFound) {
-            // This is a property, let's get the property name.
+            // This is a property, so let's get the property name.
             NSString *trimmedLine = [line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            NSArray *tokens = [trimmedLine componentsSeparatedByString:@" "];
-            NSString *propertyName = [tokens[2] stringByReplacingOccurrencesOfString:@"*" withString:@""];
+            NSArray *tokens = [trimmedLine componentsSeparatedByString:@" "]; // TODO: Support tokens separated by arbitrary whitespace.
+            NSString *propertyName = [tokens.lastObject stringByReplacingOccurrencesOfString:@"*" withString:@""];
             NSString *lineWithoutLF = [line stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-
             [nameToLineMap setObject:lineWithoutLF forKey:propertyName];
         }
     }

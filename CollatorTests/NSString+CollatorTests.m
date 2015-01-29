@@ -12,12 +12,6 @@
 
 @interface NSString_CollatorTests : XCTestCase
 
-@property (nonatomic) BOOL uhoh;
-
-@property IBOutlet NSInteger a;
-@property NSString *b;
-@property BOOL ba;
-
 @end
 
 @implementation NSString_CollatorTests
@@ -33,6 +27,8 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
+
+#pragma mark Basic Tests
 
 - (void)testStringBySortingPropertyDeclarations_EmptyString
 {
@@ -53,16 +49,38 @@
 - (void)testStringBySortingPropertyDeclarations_BasicProperties
 {
     NSString *string = @"    @property NSInteger b;\n    @property CustomType *a;";
-    NSString *expected = @"    @property CustomType *a;\n\    @property NSInteger b;";
+    NSString *expected = @"    @property CustomType *a;\n    @property NSInteger b;";
     NSString *actual = [string stringBySortingPropertyDeclarations];
 
     XCTAssertEqualObjects(expected, actual);
 }
 
-- (void)testStringBySortingPropertyDeclarations_OutletProperties
+#pragma mark IBOutlets
+
+- (void)testStringBySortingPropertyDeclarations_IBOutletProperties
 {
-    NSString *string = @"    @property NSString *c;\n    @property NSInteger b;\n    @property IBOutlet CustomType *a;";
-    NSString *expected = @"    @property IBOutlet CustomType *a;\n\    @property NSInteger b;\n    @property NSString *c;";
+    NSString *string = @"    @property IBOutlet NSString *c;\n    @property NSInteger b;\n    @property IBOutlet CustomType *a;";
+    NSString *expected = @"    @property IBOutlet CustomType *a;\n    @property NSInteger b;\n    @property IBOutlet NSString *c;";
+    NSString *actual = [string stringBySortingPropertyDeclarations];
+
+    XCTAssertEqualObjects(expected, actual);
+}
+
+#pragma mark Attributes
+
+- (void)testStringBySortingPropertyDeclarations_Attributes
+{
+    NSString *string = @"    @property (nonatomic, strong) NSString *c;\n    @property (nonatomic) NSInteger b;\n    @property (nonatomic, weak, readonly) CustomType *a;";
+    NSString *expected = @"    @property (nonatomic, weak, readonly) CustomType *a;\n    @property (nonatomic) NSInteger b;\n    @property (nonatomic, strong) NSString *c;";
+    NSString *actual = [string stringBySortingPropertyDeclarations];
+
+    XCTAssertEqualObjects(expected, actual);
+}
+
+- (void)testStringBySortingPropertyDeclarations_AttributesWithIBOutlet
+{
+    NSString *string = @"    @property (nonatomic, weak) IBOutlet NSString *c;\n    @property NSInteger b;\n    @property CustomType *a;";
+    NSString *expected = @"    @property CustomType *a;\n    @property NSInteger b;\n    @property (nonatomic, weak) IBOutlet NSString *c;";
     NSString *actual = [string stringBySortingPropertyDeclarations];
 
     XCTAssertEqualObjects(expected, actual);
