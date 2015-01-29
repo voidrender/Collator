@@ -13,7 +13,8 @@
 @interface NSString_CollatorTests : XCTestCase
 
 @property (nonatomic) BOOL uhoh;
-@property NSInteger a;
+
+@property IBOutlet NSInteger a;
 @property NSString *b;
 @property BOOL ba;
 
@@ -53,6 +54,15 @@
 {
     NSString *string = @"    @property NSInteger b;\n    @property CustomType *a;";
     NSString *expected = @"    @property CustomType *a;\n\    @property NSInteger b;";
+    NSString *actual = [string stringBySortingPropertyDeclarations];
+
+    XCTAssertEqualObjects(expected, actual);
+}
+
+- (void)testStringBySortingPropertyDeclarations_OutletProperties
+{
+    NSString *string = @"    @property NSString *c;\n    @property NSInteger b;\n    @property IBOutlet CustomType *a;";
+    NSString *expected = @"    @property IBOutlet CustomType *a;\n\    @property NSInteger b;\n    @property NSString *c;";
     NSString *actual = [string stringBySortingPropertyDeclarations];
 
     XCTAssertEqualObjects(expected, actual);
