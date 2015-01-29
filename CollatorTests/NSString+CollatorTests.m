@@ -124,4 +124,15 @@
     XCTAssertEqualObjects(expected, actual);
 }
 
+#pragma mark Balanced Declarations
+
+- (void)testStringBySortingPropertyDeclarations_BalancedDeclarations
+{
+    NSString *string = @"    @property (nonatomic)         NSInteger   b;\n    @property (nonatomic, strong) CustomType *a;";
+    NSString *expected = @"    @property (nonatomic, strong) CustomType *a;\n    @property (nonatomic)         NSInteger   b;";
+    NSString *actual = [string stringBySortingPropertyDeclarations];
+
+    XCTAssertEqualObjects(expected, actual);
+}
+
 @end
