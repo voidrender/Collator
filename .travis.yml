@@ -1,3 +1,4 @@
+---
 language: objective-c
 
 before_script:
@@ -7,5 +8,5 @@ script:
   - xctool -workspace Collator.xcworkspace -scheme 'CollatorTests' build test
 
 after_success:
-  - sudo ./coveralls.rb --extension m --exclude-folder Test --exclude-folder Externals
+  - ./Scripts/coveralls.rb --extension m --exclude-folder Test --exclude-folder Externals
 
