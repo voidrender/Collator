@@ -86,4 +86,42 @@
     XCTAssertEqualObjects(expected, actual);
 }
 
+#pragma mark Comments
+
+- (void)testStringBySortingPropertyDeclarations_BasicComment
+{
+    NSString *string = @"    @property IBOutlet NSString *c;\n    @property NSInteger b;\n    // A is for awesome!\n    @property CustomType *a;";
+    NSString *expected = @"    // A is for awesome!\n    @property CustomType *a;\n    @property NSInteger b;\n    @property IBOutlet NSString *c;";
+    NSString *actual = [string stringBySortingPropertyDeclarations];
+
+    XCTAssertEqualObjects(expected, actual);
+}
+
+- (void)testStringBySortingPropertyDeclarations_CStyleComment
+{
+    NSString *string = @"    @property IBOutlet NSString *c;\n    @property NSInteger b;\n    /* A is for awesome! */\n    @property CustomType *a;";
+    NSString *expected = @"    /* A is for awesome! */\n    @property CustomType *a;\n    @property NSInteger b;\n    @property IBOutlet NSString *c;";
+    NSString *actual = [string stringBySortingPropertyDeclarations];
+
+    XCTAssertEqualObjects(expected, actual);
+}
+
+- (void)testStringBySortingPropertyDeclarations_Pragma
+{
+    NSString *string = @"    @property IBOutlet NSString *c;\n    @property NSInteger b;\n    #pragma mark A\n    @property CustomType *a;";
+    NSString *expected = @"    #pragma mark A\n    @property CustomType *a;\n    @property NSInteger b;\n    @property IBOutlet NSString *c;";
+    NSString *actual = [string stringBySortingPropertyDeclarations];
+
+    XCTAssertEqualObjects(expected, actual);
+}
+
+- (void)testStringBySortingPropertyDeclarations_ExtraWhitespace
+{
+    NSString *string = @"    @property IBOutlet NSString *c;\n\n\n    @property NSInteger b;\n    @property CustomType *a;";
+    NSString *expected = @"    @property CustomType *a;\n\n\n    @property NSInteger b;\n    @property IBOutlet NSString *c;";
+    NSString *actual = [string stringBySortingPropertyDeclarations];
+
+    XCTAssertEqualObjects(expected, actual);
+}
+
 @end

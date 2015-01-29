@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78037C841A7A0BDE00AA9B9E /* OCProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 78037C831A7A0BDE00AA9B9E /* OCProperty.m */; };
+		78037C851A7A10B400AA9B9E /* OCProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 78037C831A7A0BDE00AA9B9E /* OCProperty.m */; };
 		7812838B1A720BE300872346 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7812838A1A720BE300872346 /* AppKit.framework */; };
 		7812838D1A720BE300872346 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7812838C1A720BE300872346 /* Foundation.framework */; };
 		781283921A720BE300872346 /* Collator.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 781283911A720BE300872346 /* Collator.xcscheme */; };
@@ -21,6 +23,8 @@
 		1A9D0BCD6F6F8FBC648C90F1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		28E524B1A1BE8738F065B129 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		690961D7AC90795EABF39B8B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		78037C821A7A0BDE00AA9B9E /* OCProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCProperty.h; sourceTree = "<group>"; };
+		78037C831A7A0BDE00AA9B9E /* OCProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCProperty.m; sourceTree = "<group>"; };
 		781283871A720BE300872346 /* Collator.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Collator.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7812838A1A720BE300872346 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		7812838C1A720BE300872346 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -93,6 +97,8 @@
 				781283941A720BE300872346 /* Collator.m */,
 				78D603B91A7223A000F5E2F4 /* NSString+Collator.h */,
 				78D603BA1A7223A000F5E2F4 /* NSString+Collator.m */,
+				78037C821A7A0BDE00AA9B9E /* OCProperty.h */,
+				78037C831A7A0BDE00AA9B9E /* OCProperty.m */,
 				7812838F1A720BE300872346 /* Supporting Files */,
 			);
 			path = Collator;
@@ -262,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78037C841A7A0BDE00AA9B9E /* OCProperty.m in Sources */,
 				781283951A720BE300872346 /* Collator.m in Sources */,
 				78D603BB1A7223A000F5E2F4 /* NSString+Collator.m in Sources */,
 			);
@@ -271,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78037C851A7A10B400AA9B9E /* OCProperty.m in Sources */,
 				78D603C91A722C6000F5E2F4 /* NSString+Collator.m in Sources */,
 				78D603C51A7225DD00F5E2F4 /* NSString+CollatorTests.m in Sources */,
 			);
