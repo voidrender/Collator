@@ -1,0 +1,3 @@
+language: objective-c
+xcode_workspace: Collator.xcworkspace
+xcode_scheme: CollatorTests
