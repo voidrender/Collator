@@ -1,6 +1,13 @@
 # Collator
 An Xcode plugin that alphabetizes property names.
 
+## Setup
+Install dependencies with CocoaPods.
+
+    pod install
+
+Open `Collator.xcworkspace` and run.
+
 ## Example
 
 *Before*
@@ -18,5 +25,5 @@ An Xcode plugin that alphabetizes property names.
 @property (nonatomic, strong) NSString *username;
 ```
 
-##Notes
+## Notes
 Arbitrary comments and whitespace are supported and are carried along with the property following the comment or whitespace.
