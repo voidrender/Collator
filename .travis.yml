@@ -1,3 +1,11 @@
 language: objective-c
-xcode_workspace: Collator.xcworkspace
-xcode_scheme: CollatorTests
+
+before_script:
+  - sudo easy_install cpp-coveralls
+
+script:
+  - xctool -project Collator.xcworkspace -scheme "Collator" build test
+
+after_success:
+  - ./coveralls.rb --extension m --exclude-folder Test --exclude-folder Externals
+

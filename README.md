@@ -1,5 +1,4 @@
-[![Build](https://travis-ci.org/ioveracker/Collator.svg?branch=master)](https://travis-ci.org/ioveracker/Collator.svg?branch=master)
-# Collator
+# Collator [![Build](https://travis-ci.org/ioveracker/Collator.svg?branch=master)](https://travis-ci.org/ioveracker/Collator.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/ioveracker/Collator/badge.svg)](https://coveralls.io/r/ioveracker/Collator)
 An Xcode plugin that alphabetizes property names.
 
 ## Setup
