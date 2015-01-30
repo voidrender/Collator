@@ -5,7 +5,8 @@ before_script:
   - sudo easy_install cpp-coveralls
 
 script:
-  - xctool -workspace Collator.xcworkspace -scheme 'CollatorTests' build test
+  - xctool -workspace 'Collator.xcworkspace' -scheme 'CollatorTests' -configuration Debug build test GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 
 after_success:
-  - ./Scripts/coveralls.sh
+  - ./Scripts/coveralls.rb -h --exclude-folder Test --exclude-folder Externals --exclude-folder CollatorTests
+  
