@@ -8,5 +8,5 @@ script:
   - xctool -workspace Collator.xcworkspace -scheme 'CollatorTests' build test
 
 after_success:
-  - ./Scripts/coveralls.rb --extension m --exclude-folder Test --exclude-folder Externals
+  - ./Scripts/coveralls.rb --extension m --exclude-folder Test --exclude-folder Externals --exclude-folder CollatorTests.build
 
